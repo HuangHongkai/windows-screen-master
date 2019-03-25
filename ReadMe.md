@@ -33,4 +33,14 @@ VS2017 + ffmpeg
 其中我已经提供了x86平台下的ffmpeg开发库。
 
 
-
+### 代码介绍
+- MonitorMaster.cpp 
+  枚举显示器，查看显示器的一些信息
+- SDLMaster.cpp
+  封装一个简单的SDL播放器
+- ffmpegEncoder.cpp
+  使用ffmpeg库实现mpeg和x264视频编码的功能
+- libx264Master.cpp
+  使用libx264库实现x264视频编码
+- web_stream.cpp
+  实现一个简单的web服务器，该服务器传输照片流形成视频（目前视频流还没有做好，因为找不到一款合适的javascript编码解码工具）
