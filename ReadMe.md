@@ -38,6 +38,9 @@ VS2017 + ffmpeg
 
 其中我已经提供了x86平台下的ffmpeg开发库。
 
+### TODO
+- 浏览器上使用javascript库播放h264/mpeg视频流（试过几个库，例如Broadway库，出现花屏等情况，不知道是哪方面出问题）
+- rtsp推流（试过用nginx来推流，效果不是特别好，不知道怎么优化，所以没把代码放上）
 
 ### 代码介绍
 - MonitorMaster.cpp 
