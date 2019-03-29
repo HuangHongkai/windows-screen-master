@@ -1,4 +1,3 @@
-///// by fanxiushu 2017-05-14
 #include <WinSock.h>
 #include <vector>
 #include <string>
@@ -93,7 +92,7 @@ DWORD CALLBACK web_stream::client_thread(void* _p)
 	bool quit = false;
 
 	int pos = 0; int LEN = sizeof(buffer);
-	while (pos < LEN - 1) { //Ö»ÄÜ´¦Àí GET ÃüÁî
+	while (pos < LEN - 1) { //åªèƒ½å¤„ç† GET å‘½ä»¤
 		int r = recv(s, buffer + pos, LEN - pos, 0);
 		if (r <= 0) { quit = true; break; }
 		pos += r;
@@ -161,11 +160,11 @@ void web_stream::frame(dp_frame_t* frame)
 
 	if (socks.size() == 0)return;
 
-	if (frame->bitcount == 8)return; // 8Î»É«²»´¦Àí
+	if (frame->bitcount == 8)return; // 8ä½è‰²ä¸å¤„ç†
 
 	unsigned char* line_data = NULL;
 	struct jpeg_compress_struct cinfo; //
-	memset(&cinfo, 0, sizeof(cinfo)); //È«²¿³õÊ¼»¯Îª0£¬ ·ñÔòÒª³öÎÊÌâ
+	memset(&cinfo, 0, sizeof(cinfo)); //å…¨éƒ¨åˆå§‹åŒ–ä¸º0ï¼Œ å¦åˆ™è¦å‡ºé—®é¢˜
 
 	struct jpeg_error_t jerr;
 	cinfo.err = jpeg_std_error(&jerr.pub);
@@ -198,7 +197,7 @@ void web_stream::frame(dp_frame_t* frame)
 	}
 	jpeg_set_defaults(&cinfo); 
 	
-	int quality = jpeg_quality; ////Ñ¹ËõÖÊÁ¿
+	int quality = jpeg_quality; ////å‹ç¼©è´¨é‡
 
 	jpeg_set_quality(&cinfo, quality, TRUE);
 	jpeg_start_compress(&cinfo, TRUE);
